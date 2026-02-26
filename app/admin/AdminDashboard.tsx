@@ -118,7 +118,7 @@ export default function AdminDashboard({ user, leads, fetchError }: Props) {
     return diff < 7 * 24 * 60 * 60 * 1000 // last 7 days
   }).length
 
-  const uniqueBusinessTypes = [...new Set(leads.map((l) => l.business_type))].length
+  const uniqueBusinessTypes = Array.from(new Set(leads.map((l) => l.business_type))).length
 
   return (
     <div className="min-h-screen bg-[#09090b] text-white">
